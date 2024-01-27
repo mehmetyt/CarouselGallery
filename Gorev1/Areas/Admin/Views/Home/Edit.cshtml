@@ -1,0 +1,48 @@
+﻿@* @model Gorev1.Data.Slayt *@
+@model SlaytViewModel
+
+@{
+	ViewData["Title"] = "Düzenle";
+}
+
+<h1>Resim Düzenle</h1>
+
+<hr />
+<div class="row">
+	<div class="col-lg-10 errorspace">
+		<form asp-action="Edit" enctype="multipart/form-data">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="Id" />
+			<div class="form-group">
+				<label asp-for="Resim" class="control-label"></label>
+				<input asp-for="Resim" class="form-control" />
+				<span asp-validation-for="Resim" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Baslik" class="control-label"></label>
+				<input asp-for="Baslik" class="form-control" />
+				<span asp-validation-for="Baslik" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Aciklama" class="control-label"></label>
+				<input asp-for="Aciklama" class="form-control" />
+				<span asp-validation-for="Aciklama" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Sira" class="control-label"></label>
+				<input asp-for="Sira" class="form-control" />
+				<span asp-validation-for="Sira" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input type="submit" value="Kaydet" class="btn btn-primary" />
+				<a class="btn btn-secondary" asp-action="Index">Listeye Dön</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
