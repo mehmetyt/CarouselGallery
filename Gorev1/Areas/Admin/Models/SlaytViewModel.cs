@@ -19,6 +19,8 @@ namespace Gorev1.Areas.Admin.Models
 		public string Aciklama { get; set; } = null!;
 
 		[Display(Name = "Sıra")]
+		[Required(ErrorMessage = "{0} ekleyin.")]
+
 		public int Sira { get; set; }
 	}
 }
